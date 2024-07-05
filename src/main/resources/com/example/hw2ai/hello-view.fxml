@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hw2ai.HelloController">
+   <children>
+      <ImageView fx:id="image" fitHeight="625.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@accesories/back.png" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="outputArea" layoutX="443.0" layoutY="59.0" prefHeight="370.0" prefWidth="334.0" style="-fx-background-radius: 100;" />
+      <Button fx:id="buildNetworkButton" layoutX="101.0" layoutY="308.0" mnemonicParsing="false" onAction="#buildNeuralNetwork" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: transper;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="trainButton" layoutX="229.0" layoutY="308.0" mnemonicParsing="false" onAction="#trainNeuralNetwork" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: transper;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <VBox layoutX="229.0" layoutY="59.0" prefHeight="246.0" prefWidth="178.0">
+         <children>
+            <TextField fx:id="neuronsField">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="goalField">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="epochsField">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="learningRateField">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </TextField>
+            <ComboBox fx:id="hiddenFunctions" onAction="#hiddenFunctionsSelected" prefHeight="26.0" prefWidth="178.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="relu" />
+                     <String fx:value="tanh" />
+                  </FXCollections>
+               </items>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </ComboBox>
+            <ComboBox fx:id="outputFunctions" onAction="#outputFunctionsSelected" prefHeight="26.0" prefWidth="181.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="sigmoid" />
+                     <String fx:value="tanh" />
+                     <String fx:value="softmax" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+         </children>
+      </VBox>
+      <Button fx:id="chooseFile" layoutX="212.0" layoutY="419.0" mnemonicParsing="false" onAction="#chooseFileClicked" prefHeight="174.0" prefWidth="170.0" style="-fx-background-color: transper;" />
+      <TextField fx:id="sweet" layoutX="598.0" layoutY="441.0" prefHeight="26.0" prefWidth="106.0" />
+      <TextField fx:id="color" layoutX="598.0" layoutY="479.0" prefHeight="26.0" prefWidth="106.0" />
+      <Label fx:id="testResult" layoutX="611.0" layoutY="523.0" prefHeight="19.0" prefWidth="106.0" />
+      <Button fx:id="testButton" layoutX="475.0" layoutY="515.0" mnemonicParsing="false" onAction="#testClicked" prefHeight="35.0" prefWidth="106.0" style="-fx-background-color: transper;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fx:id="orange" fitHeight="42.0" fitWidth="38.0" layoutX="611.0" layoutY="513.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@accesories/orangeIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="apple" fitHeight="60.0" fitWidth="59.0" layoutX="600.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@accesories/appleIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="banana" fitHeight="46.0" fitWidth="46.0" layoutX="603.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@accesories/bananaIcon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
